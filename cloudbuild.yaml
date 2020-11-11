@@ -1,0 +1,5 @@
+steps:
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t', '--build-arg=PROJECT_ID=$PROJECT_ID', 'gcr.io/$PROJECT_ID/$REPO_NAME:11.1-devel', '.']
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['push', 'gcr.io/$PROJECT_ID/$REPO_NAME:11.1-devel']
