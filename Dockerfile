@@ -1,7 +1,8 @@
 ARG DOMAIN=docker.io
-ARG CONTAINER_REPO_NAME=elliotsayes
-ARG BASE_TAG=latest
-FROM $DOMAIN/$CONTAINER_REPO_NAME/cuda-fastapi:$BASE_TAG
+ARG CONTAINER_REPO=elliotsayes
+ARG CONTAINER_SUFFIX
+ARG TAG=latest
+FROM $DOMAIN/$CONTAINER_REPO/cuda-fastapi$CONTAINER_SUFFIX:$TAG
 
 LABEL maintainer="Elliot Sayes <elliot@sayes.cloud>"
 
