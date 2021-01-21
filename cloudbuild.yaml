@@ -1,6 +1,6 @@
 steps:
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '--build-arg=CONTAINER_REPO_NAME=$PROJECT_ID', '-t', 'gcr.io/$PROJECT_ID/$REPO_NAME:11.1-devel', '.']
+  args: ['build', '--build-arg=DOMAIN=gcr.io', '--build-arg=CONTAINER_REPO_NAME=$PROJECT_ID', '--build-arg=BASE_TAG=11.1-devel', '-t', 'gcr.io/$PROJECT_ID/$REPO_NAME:11.1-devel', '.']
 - name: 'gcr.io/cloud-builders/docker'
   args: ['push', 'gcr.io/$PROJECT_ID/$REPO_NAME:11.1-devel']
 timeout: 3600s
